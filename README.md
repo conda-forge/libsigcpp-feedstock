@@ -69,6 +69,7 @@ Terminology
 
 Current build status
 ====================
+
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/libsigcpp-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/libsigcpp-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/libsigcpp-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/libsigcpp-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/libsigcpp-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/libsigcpp-feedstock/branch/master)
