@@ -23,7 +23,8 @@ set -e
 # configure, make, install, check
 ./configure --prefix="${PREFIX}" \
             --enable-static \
-            --disable-rpath \
+            --with-libsigc-includes="${PREFIX}/include" \
+            --with-libsigc-libraries="${PREFIX}/lib" \
   || { cat config.log; exit 1; }
 make
 make check
