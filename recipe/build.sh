@@ -2,11 +2,11 @@
 set -e
 
 # set and verify flags
-#export LDFLAGS=
-#export CFLAGS="-O3"
-#export CXXFLAGS="-O3"
-#export LIBRARY_PATH="${PREFIX}/lib"
-#export INCLUDE_PATH="${PREFIX}/include"
+export LDFLAGS=
+export CFLAGS="-O3"
+export CXXFLAGS="-O3"
+export LIBRARY_PATH="${PREFIX}/lib"
+export INCLUDE_PATH="${PREFIX}/include"
 #if [ "$(uname)" == "Darwin" ]; then
   # for Mac OSX
 #  export CC=clang
@@ -18,14 +18,15 @@ set -e
 #  export LDFLAGS="${LDFLAGS} -stdlib=libc++"
 #  export LINKFLAGS="${LDFLAGS}"
 #fi
-#export PKG_CONFIG_PATH=
+export PKG_CONFIG_PATH=
 
 # configure, make, install, check
 ./configure --prefix="${PREFIX}" \
-            --enable-static \
-            --with-libsigc-includes="${PREFIX}/include" \
-            --with-libsigc-libraries="${PREFIX}/lib" \
   || { cat config.log; exit 1; }
 make
 make check
 make install
+
+#            --enable-static \
+#            --with-libsigc-includes="${PREFIX}/include" \
+#            --with-libsigc-libraries="${PREFIX}/lib" \
