@@ -11,11 +11,12 @@ source:
   sha256: 774980d027c52947cb9ee4fac6ffe2ca60cc2f753068a89dfd281c83dbff9651
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win]
 
 requirements:
   build:
+    - toolchain
     - autoconf
     - automake
     - m4
