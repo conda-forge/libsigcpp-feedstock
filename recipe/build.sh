@@ -16,7 +16,7 @@ if [ "$(uname)" == "Darwin" ]; then
   #export CXXFLAGS="${CXXFLAGS} -stdlib=libc++"
   export LDFLAGS="${LDFLAGS} -mmacosx-version-min=${MACOSX_VERSION_MIN}"
   #export LDFLAGS="${LDFLAGS} -stdlib=libc++"
-  #export LINKFLAGS="${LDFLAGS}"
+  export LINKFLAGS="${LDFLAGS}"
 fi
 #export PKG_CONFIG_PATH=
 
