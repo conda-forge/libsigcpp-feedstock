@@ -28,7 +28,8 @@ test:
 
 about:
   home: http://libsigc.sourceforge.net/
-  license: GNU Lesser General Public License v3
+  license: LGPL v3
+  license_file: COPYING
   summary: "libsigc++ implements a typesafe callback system for standard C++."
 
 extra:
