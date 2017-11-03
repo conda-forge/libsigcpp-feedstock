@@ -12,14 +12,20 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
+#  features:
+#    - vc9   # [win and py27]
+#    - vc10  # [win and py34]
+#    - vc14  # [win and py>=35]
 
 requirements:
   build:
-    - toolchain
-    - autoconf
-    - automake
-    - m4
+    - toolchain  # [unix]
+    - autoconf   # [unix]
+    - automake   # [unix]
+    - m4         # [unix]
+    - m2w64-toolchain  # [win]
+  run:
+    - m2w64-gcc-libs   # [win]
 
 test:
   commands:
