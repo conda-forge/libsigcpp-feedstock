@@ -23,6 +23,8 @@ requirements:
     - autoconf   # [unix]
     - automake   # [unix]
     - m4         # [unix]
+    - toolchain
+    - make
     - m2w64-toolchain  # [win]
   run:
     - m2w64-gcc-libs   # [win]
