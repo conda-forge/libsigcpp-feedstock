@@ -12,19 +12,27 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
 
 requirements:
   build:
-    - toolchain
-    - autoconf
-    - automake
-    - m4
+    - toolchain  # [unix]
+    - autoconf   # [unix]
+    - automake   # [unix]
+    - m4         # [unix]
+    - posix            # [win]
+    - m2-xz            # [win]
+    - m2-m4            # [win]
+    - m2w64-toolchain  # [win]
+  run:
+    - posix            # [win]
+    - m2w64-gcc-libs   # [win]
 
 test:
   commands:
     - test -f ${PREFIX}/lib/libsigc-2.0.so  # [linux]
     - test -f ${PREFIX}/lib/libsigc-2.0.dylib  # [osx]
+    - if not exist %PREFIX%\\lib\\libsigc-2.0.a exit 1  # [win]
+    
 
 about:
   home: http://libsigc.sourceforge.net/
