@@ -1,12 +1,13 @@
 @echo off
 setlocal EnableDelayedExpansion
 
-SET MAKE=gnumake.exe
+SET UNIX_PREFIX=%CYGWIN_PREFIX:~9%
+echo UNIX_PREFIX is %UNIX_PREFIX%
 
-bash configure --prefix="%PREFIX%"
+bash configure --prefix %UNIX_PREFIX% --enable-static --enable-shared --disable-documentation
 if errorlevel 1 exit 1
 
-gnumake
+make
 if errorlevel 1 exit 1
 
 make check

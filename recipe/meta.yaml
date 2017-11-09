@@ -12,10 +12,6 @@ source:
 
 build:
   number: 0
-#  features:
-#    - vc9   # [win and py27]
-#    - vc10  # [win and py34]
-#    - vc14  # [win and py>=35]
 
 requirements:
   build:
@@ -23,16 +19,19 @@ requirements:
     - autoconf   # [unix]
     - automake   # [unix]
     - m4         # [unix]
-    - toolchain
-    - make
+    - posix            # [win]
+    - m2-m4            # [win]
     - m2w64-toolchain  # [win]
   run:
+    - posix            # [win]
     - m2w64-gcc-libs   # [win]
 
 test:
   commands:
     - test -f ${PREFIX}/lib/libsigc-2.0.so  # [linux]
     - test -f ${PREFIX}/lib/libsigc-2.0.dylib  # [osx]
+    - if not exist %PREFIX%\\lib\\libsigc-2.0.a exit 1  # [win]
+    
 
 about:
   home: http://libsigc.sourceforge.net/
