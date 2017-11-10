@@ -20,6 +20,7 @@ requirements:
     - automake   # [unix]
     - m4         # [unix]
     - posix            # [win]
+    - m2-xz            # [win]
     - m2-m4            # [win]
     - m2w64-toolchain  # [win]
   run:
