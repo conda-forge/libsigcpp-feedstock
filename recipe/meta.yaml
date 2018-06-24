@@ -16,9 +16,11 @@ build:
 
 requirements:
   build:
-    - toolchain
     - autoconf
     - automake
+    - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
+  host:
     - m4
 
 test:
