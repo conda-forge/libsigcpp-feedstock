@@ -3,7 +3,7 @@ About libsigcpp
 
 Home: http://libsigc.sourceforge.net/
 
-Package license: GNU Lesser General Public License v3
+Package license: LGPL v3
 
 Feedstock license: BSD 3-Clause
 
@@ -14,14 +14,16 @@ Summary: libsigc++ implements a typesafe callback system for standard C++.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/libsigcpp-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/libsigcpp-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/libsigcpp-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/libsigcpp-feedstock)
-Windows: ![](https://cdn.rawgit.com/conda-forge/conda-smithy/90845bba35bec53edac7a16638aa4d77217a3713/conda_smithy/static/disabled.svg)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/libsigcpp-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/libsigcpp-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/libsigcpp-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/libsigcpp-feedstock)
+![Windows disabled](https://img.shields.io/badge/Windows-disabled-lightgrey.svg)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libsigcpp/badges/version.svg)](https://anaconda.org/conda-forge/libsigcpp)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/libsigcpp/badges/downloads.svg)](https://anaconda.org/conda-forge/libsigcpp)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libsigcpp-green.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) |
 
 Installing libsigcpp
 ====================
