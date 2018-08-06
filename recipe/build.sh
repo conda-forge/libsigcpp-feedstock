@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -e
+set -ex
 
 # set and verify flags
 if [ "$(uname)" == "Darwin" ]; then
@@ -17,3 +17,6 @@ fi
 make
 make check
 make install
+
+# Remove libtool files
+find $PREFIX -name '*.la' -delete
