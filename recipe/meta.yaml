@@ -1,5 +1,5 @@
-{% set major_minor = "2.10" %}
-{% set version = major_minor + ".3" %}
+{% set version = "2.10.3" %}
+{% set major_minor = ".".join(version.split(".")[:2]) %}
 {% set abi_version = "2.0" %}
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
   fn: libsigc++-{{ version }}.tar.xz
   url: http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/{{ major_minor }}/libsigc++-{{ version }}.tar.xz
-  sha256: f843d6346260bfcb4426259e314512b99e296e8ca241d771d21ac64f28298d81
+  sha256: 0b68dfc6313c6cc90ac989c6d722a1bf0585ad13846e79746aa87cb265904786
 
 build:
   number: 0
