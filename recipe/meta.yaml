@@ -15,14 +15,14 @@ build:
   number: 0
   skip: true  # [win]
   run_exports:
-    - libsigcpp-{{ abi_version }} >={{ version }}
+    - sigcpp-{{ abi_version }} >={{ version }}
 
 outputs:
-  - name: libsigcpp-{{ abi_version }}
+  - name: sigcpp-{{ abi_version }}
     script: build_libsigcpp.sh
     build:
       run_exports:
-        - libsigcpp-{{ abi_version }} >={{ version }}
+        - sigcpp-{{ abi_version }} >={{ version }}
     requirements:
       build:
         - autoconf
@@ -40,7 +40,7 @@ outputs:
   - name: libsigcpp
     requirements:
       run:
-        - libsigcpp-{{ abi_version }}  {{ version }}
+        - sigcpp-{{ abi_version }}  {{ version }}
     test:
       commands:
         - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc
