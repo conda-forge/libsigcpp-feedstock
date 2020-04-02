@@ -41,6 +41,9 @@ outputs:
     requirements:
       run:
         - libsigcpp-{{ abi_version }}  {{ version }}
+    test:
+      commands:
+        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc
 
 about:
   home: http://libsigc.sourceforge.net/
