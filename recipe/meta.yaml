@@ -1,5 +1,6 @@
 {% set major_minor = "2.10" %}
-{% set version = major_minor + ".0" %}
+{% set version = major_minor + ".3" %}
+{% set abi_version = "2.0" %}
 
 package:
   name: libsigcpp
@@ -11,29 +12,43 @@ source:
   sha256: f843d6346260bfcb4426259e314512b99e296e8ca241d771d21ac64f28298d81
 
 build:
-  number: 1001
+  number: 0
   skip: true  # [win]
+  run_exports:
+    - libsigcpp-{{ abi_version }} >={{ version }}
 
-requirements:
-  build:
-    - autoconf
-    - automake
-    - {{ compiler('c') }}
-    - {{ compiler('cxx') }}
-  host:
-    - m4
+outputs:
+  - name: libsigcpp-{{ abi_version }}
+    script: build_libsigcpp.sh
+    build:
+      run_exports:
+        - libsigcpp-{{ abi_version }} >={{ version }}
+    requirements:
+      build:
+        - autoconf
+        - automake
+        - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
+      host:
+        - m4
+      run_constrained:
+        - libsigcpp {{ version }}
+    test:
+      commands:
+        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}
 
-test:
-  commands:
-    - test -f ${PREFIX}/lib/libsigc-2.0.so  # [linux]
-    - test -f ${PREFIX}/lib/libsigc-2.0.dylib  # [osx]
+  - name: libsigcpp
+    requirements:
+      run:
+        - libsigcpp-{{ abi_version }}  {{ version }}
 
 about:
   home: http://libsigc.sourceforge.net/
-  license: LGPL v3
+  license: LGPL-2.1-or-later
   license_file: COPYING
   summary: "libsigc++ implements a typesafe callback system for standard C++."
 
 extra:
   recipe-maintainers:
     - scopatz
+    - isuruf
