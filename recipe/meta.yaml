@@ -1,4 +1,4 @@
-{% set version = "2.10.3" %}
+{% set version = "3.0.3" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
 {% set abi_version = "2.0" %}
 
@@ -9,7 +9,7 @@ package:
 source:
   fn: libsigc++-{{ version }}.tar.xz
   url: http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/{{ major_minor }}/libsigc++-{{ version }}.tar.xz
-  sha256: 0b68dfc6313c6cc90ac989c6d722a1bf0585ad13846e79746aa87cb265904786
+  sha256: e4f4866a894bdbe053e4fb22ccc6bc4b6851fd31a4746fdd20b2cf6e87c6edb6
 
 build:
   number: 0
@@ -49,7 +49,7 @@ about:
   home: http://libsigc.sourceforge.net/
   license: LGPL-3.0-or-later
   license_file: COPYING
-  summary: "libsigc++ implements a typesafe callback system for standard C++."
+  summary: libsigc++ implements a typesafe callback system for standard C++.
 
 extra:
   recipe-maintainers:
