@@ -3,7 +3,7 @@ About libsigcpp
 
 Home: http://libsigc.sourceforge.net/
 
-Package license: LGPL-2.1-or-later
+Package license: LGPL-3.0-or-later
 
 Feedstock license: BSD 3-Clause
 
@@ -68,7 +68,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libsigcpp-green.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libsigcpp--2.0-green.svg)](https://anaconda.org/conda-forge/libsigcpp-2.0) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsigcpp-2.0.svg)](https://anaconda.org/conda-forge/libsigcpp-2.0) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsigcpp-2.0.svg)](https://anaconda.org/conda-forge/libsigcpp-2.0) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsigcpp-2.0.svg)](https://anaconda.org/conda-forge/libsigcpp-2.0) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sigcpp--2.0-green.svg)](https://anaconda.org/conda-forge/sigcpp-2.0) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sigcpp-2.0.svg)](https://anaconda.org/conda-forge/sigcpp-2.0) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sigcpp-2.0.svg)](https://anaconda.org/conda-forge/sigcpp-2.0) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sigcpp-2.0.svg)](https://anaconda.org/conda-forge/sigcpp-2.0) |
 
 Installing libsigcpp
 ====================
@@ -79,10 +79,10 @@ Installing `libsigcpp` from the `conda-forge` channel can be achieved by adding 
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `libsigcpp, libsigcpp-2.0` can be installed with:
+Once the `conda-forge` channel has been enabled, `libsigcpp, sigcpp-2.0` can be installed with:
 
 ```
-conda install libsigcpp libsigcpp-2.0
+conda install libsigcpp sigcpp-2.0
 ```
 
 It is possible to list all of the versions of `libsigcpp` available on your platform with:
