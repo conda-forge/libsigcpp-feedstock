@@ -29,6 +29,7 @@ outputs:
         - automake
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - make  # [unix]
       host:
         - m4
       run_constrained:
