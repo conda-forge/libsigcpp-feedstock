@@ -46,10 +46,12 @@ outputs:
         - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc
 
 about:
-  home: http://libsigc.sourceforge.net/
+  home: https://libsigcplusplus.github.io/libsigcplusplus/
   license: LGPL-3.0-or-later
   license_file: COPYING
-  summary: libsigc++ implements a typesafe callback system for standard C++.
+  summary: libsigc++ implements a typesafe callback system for standard C++
+  dev_url: https://github.com/libsigcplusplus/libsigcplusplus
+  doc_url: https://libsigcplusplus.github.io/libsigcplusplus/doc.html
 
 extra:
   recipe-maintainers:
