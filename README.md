@@ -1,13 +1,17 @@
 About libsigcpp
 ===============
 
-Home: http://libsigc.sourceforge.net/
+Home: https://libsigcplusplus.github.io/libsigcplusplus/
 
 Package license: LGPL-3.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsigcpp-feedstock/blob/master/LICENSE.txt)
 
-Summary: libsigc++ implements a typesafe callback system for standard C++.
+Summary: libsigc++ implements a typesafe callback system for standard C++
+
+Development: https://github.com/libsigcplusplus/libsigcplusplus
+
+Documentation: https://libsigcplusplus.github.io/libsigcplusplus/doc.html
 
 Current build status
 ====================
@@ -82,7 +86,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-libsigcpp-green.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libsigcpp.svg)](https://anaconda.org/conda-forge/libsigcpp) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-sigcpp--3.0-green.svg)](https://anaconda.org/conda-forge/sigcpp-3.0) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sigcpp-3.0.svg)](https://anaconda.org/conda-forge/sigcpp-3.0) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sigcpp-3.0.svg)](https://anaconda.org/conda-forge/sigcpp-3.0) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sigcpp-3.0.svg)](https://anaconda.org/conda-forge/sigcpp-3.0) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-sigcpp--2.0-green.svg)](https://anaconda.org/conda-forge/sigcpp-2.0) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/sigcpp-2.0.svg)](https://anaconda.org/conda-forge/sigcpp-2.0) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/sigcpp-2.0.svg)](https://anaconda.org/conda-forge/sigcpp-2.0) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/sigcpp-2.0.svg)](https://anaconda.org/conda-forge/sigcpp-2.0) |
 
 Installing libsigcpp
 ====================
@@ -93,10 +97,10 @@ Installing `libsigcpp` from the `conda-forge` channel can be achieved by adding 
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `libsigcpp, sigcpp-3.0` can be installed with:
+Once the `conda-forge` channel has been enabled, `libsigcpp, sigcpp-2.0` can be installed with:
 
 ```
-conda install libsigcpp sigcpp-3.0
+conda install libsigcpp sigcpp-2.0
 ```
 
 It is possible to list all of the versions of `libsigcpp` available on your platform with:
