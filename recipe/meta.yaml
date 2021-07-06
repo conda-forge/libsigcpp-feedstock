@@ -28,6 +28,8 @@ outputs:
         - automake
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - meson
+        - ninja
         - make  # [unix]
       host:
         - m4
