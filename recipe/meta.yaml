@@ -1,4 +1,4 @@
-{% set version = "2.10.3" %}
+{% set version = "2.10.7" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
 {% set abi_version = "2.0" %}
 
@@ -8,7 +8,7 @@ package:
 
 source:
   url: http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/{{ major_minor }}/libsigc++-{{ version }}.tar.xz
-  sha256: 0b68dfc6313c6cc90ac989c6d722a1bf0585ad13846e79746aa87cb265904786
+  sha256: d082a2ce72c750f66b1a415abe3e852df2eae1e8af53010f4ac2ea261a478832
 
 build:
   number: 0
@@ -28,6 +28,8 @@ outputs:
         - automake
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
+        - meson
+        - ninja
         - make  # [unix]
       host:
         - m4
