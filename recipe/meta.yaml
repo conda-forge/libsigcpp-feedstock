@@ -24,6 +24,7 @@ outputs:
         - sigcpp-{{ abi_version }} >={{ version }}
     requirements:
       build:
+        - gnuconfig
         - autoconf
         - automake
         - {{ compiler('c') }}
