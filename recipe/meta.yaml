@@ -25,11 +25,12 @@ outputs:
         - sigcpp-{{ abi_version }} >={{ version }}
     requirements:
       build:
+        - gnuconfig
         - autoconf
         - automake
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
-        - make  # [unix]
+        - make
       host:
         - m4
       run_constrained:
