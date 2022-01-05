@@ -5,7 +5,13 @@ set -ex
 cp $BUILD_PREFIX/share/gnuconfig/config.* ./build
 
 mkdir builddir
-meson --prefix="${PREFIX}" --libdir=lib builddir .
+
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" == "1" ]]; then
+    meson ${MESON_ARGS} builddir .
+else
+    meson --prefix="${PREFIX}" --libdir=lib builddir .
+fi
+
 cd builddir
 ninja -j${CPU_COUNT}
 ninja test
