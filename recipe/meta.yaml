@@ -11,7 +11,7 @@ source:
   sha256: d082a2ce72c750f66b1a415abe3e852df2eae1e8af53010f4ac2ea261a478832
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - sigcpp-{{ abi_version }} >={{ version }}
