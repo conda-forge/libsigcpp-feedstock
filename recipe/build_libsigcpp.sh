@@ -12,6 +12,9 @@ fi
 # configure, make, install, check
 ./configure --prefix="${PREFIX}" \
   || { cat config.log; exit 1; }
+
 make -j${CPU_COUNT}
-make check
+if [[ "$CONDA_BUILD_CROSS_COMPILATION" != "1" ]]; then
+  make check
+fi
 make install
