@@ -6,7 +6,7 @@ cp $BUILD_PREFIX/share/gnuconfig/config.* ./build
 
 mkdir builddir
 
-meson ${MESON_ARGS} --prefix="${PREFIX}" --libdir=lib builddir .
+meson ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib builddir .
 
 cd builddir
 ninja -j${CPU_COUNT}
