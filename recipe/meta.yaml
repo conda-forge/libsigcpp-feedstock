@@ -12,13 +12,13 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
   run_exports:
     - sigcpp-{{ abi_version }} >={{ version }}
 
 outputs:
   - name: sigcpp-{{ abi_version }}
-    script: build_libsigcpp.sh
+    script: build_libsigcpp.sh  # [unix]
+    script: build_libsigcpp.bat  # [win]
     build:
       run_exports:
         - sigcpp-{{ abi_version }} >={{ version }}
@@ -32,7 +32,8 @@ outputs:
         - libsigcpp {{ version }}
     test:
       commands:
-        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}
+        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}  # [unix]
+        # TODO: add windows test
 
   - name: libsigcpp
     requirements:
@@ -40,7 +41,8 @@ outputs:
         - sigcpp-{{ abi_version }}  {{ version }}
     test:
       commands:
-        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc
+        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc  # [unix]
+        # TODO: add windows test
 
 about:
   home: https://libsigcplusplus.github.io/libsigcplusplus/
