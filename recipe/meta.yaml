@@ -33,7 +33,7 @@ outputs:
     test:
       commands:
         - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}  # [unix]
-        # TODO: add windows test
+        - if not exist %LIBRARY_BIN%\\sigc-{{ abi_version }}-0.dll exit 1  # [win]
 
   - name: libsigcpp
     requirements:
@@ -42,7 +42,7 @@ outputs:
     test:
       commands:
         - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc  # [unix]
-        # TODO: add windows test
+        - if not exist %LIBRARY_LIB%\\pkgconfig\\sigc++-{{ abi_version }}.pc exit 1  # [win]
 
 about:
   home: https://libsigcplusplus.github.io/libsigcplusplus/
