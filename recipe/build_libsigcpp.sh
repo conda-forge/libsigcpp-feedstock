@@ -1,14 +1,8 @@
 #!/usr/bin/env bash
 set -ex
 
-# Get an updated config.sub and config.guess
-cp $BUILD_PREFIX/share/gnuconfig/config.* ./build
-
-mkdir builddir
-
 meson ${MESON_ARGS} --prefix="${PREFIX}" -Dlibdir=lib builddir .
 
-cd builddir
-ninja -j${CPU_COUNT}
-ninja test
-ninja install
+ninja -C builddir -j${CPU_COUNT}
+ninja -C builddir test
+ninja -C builddir install

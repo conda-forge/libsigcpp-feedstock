@@ -1,4 +1,4 @@
-{% set version = "2.10.7" %}
+{% set version = "2.10.8" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
 {% set abi_version = "2.0" %}
 
@@ -7,38 +7,33 @@ package:
   version: {{ version }}
 
 source:
-  url: http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/{{ major_minor }}/libsigc++-{{ version }}.tar.xz
-  sha256: d082a2ce72c750f66b1a415abe3e852df2eae1e8af53010f4ac2ea261a478832
+  url: https://download.gnome.org/sources/libsigc++/{{ major_minor }}/libsigc++-{{ version }}.tar.xz
+  sha256: 235a40bec7346c7b82b6a8caae0456353dc06e71f14bc414bcc858af1838719a
 
 build:
-  number: 1
-  skip: true  # [win]
+  number: 0
   run_exports:
     - sigcpp-{{ abi_version }} >={{ version }}
 
 outputs:
   - name: sigcpp-{{ abi_version }}
-    script: build_libsigcpp.sh
+    script: build_libsigcpp.sh  # [unix]
+    script: build_libsigcpp.bat  # [win]
     build:
       run_exports:
         - sigcpp-{{ abi_version }} >={{ version }}
     requirements:
       build:
-        - gnuconfig
-        - autoconf
-        - automake
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
         - meson
         - ninja
-        - make  # [unix]
-      host:
-        - m4
       run_constrained:
         - libsigcpp {{ version }}
     test:
       commands:
-        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}
+        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}  # [unix]
+        - if not exist %LIBRARY_BIN%\\sigc-{{ abi_version }}-0.dll exit 1  # [win]
 
   - name: libsigcpp
     requirements:
@@ -46,7 +41,8 @@ outputs:
         - sigcpp-{{ abi_version }}  {{ version }}
     test:
       commands:
-        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc
+        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc  # [unix]
+        - if not exist %LIBRARY_LIB%\\pkgconfig\\sigc++-{{ abi_version }}.pc exit 1  # [win]
 
 about:
   home: https://libsigcplusplus.github.io/libsigcplusplus/
@@ -60,3 +56,4 @@ extra:
   recipe-maintainers:
     - scopatz
     - isuruf
+    - tschoonj
