@@ -207,4 +207,5 @@ Feedstock Maintainers
 
 * [@isuruf](https://github.com/isuruf/)
 * [@scopatz](https://github.com/scopatz/)
+* [@tschoonj](https://github.com/tschoonj/)
 
