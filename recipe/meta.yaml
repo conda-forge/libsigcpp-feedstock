@@ -13,13 +13,13 @@ source:
 
 build:
   number: 0
-  skip: true  # [win]
   run_exports:
     - sigcpp-{{ abi_version }} >={{ version }}
 
 outputs:
   - name: sigcpp-{{ abi_version }}
-    script: build_libsigcpp.sh
+    script: build_libsigcpp.sh  # [unix]
+    script: build_libsigcpp.bat  # [win]
     build:
       run_exports:
         - sigcpp-{{ abi_version }} >={{ version }}
@@ -33,7 +33,8 @@ outputs:
         - libsigcpp {{ version }}
     test:
       commands:
-        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}
+        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}  # [unix]
+        - if not exist %LIBRARY_BIN%\\sigc-{{ abi_version }}-0.dll exit 1  # [win]
 
   - name: libsigcpp
     requirements:
@@ -41,7 +42,8 @@ outputs:
         - sigcpp-{{ abi_version }}  {{ version }}
     test:
       commands:
-        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc
+        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc  # [unix]
+        - if not exist %LIBRARY_LIB%\\pkgconfig\\sigc++-{{ abi_version }}.pc exit 1  # [win]
 
 about:
   home: http://libsigc.sourceforge.net/
