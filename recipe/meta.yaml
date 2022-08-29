@@ -1,4 +1,4 @@
-{% set version = "3.0.3" %}
+{% set version = "3.2.0" %}
 {% set major_minor = ".".join(version.split(".")[:2]) %}
 {% set abi_version = "3.0" %}
 
@@ -8,44 +8,46 @@ package:
 
 source:
   fn: libsigc++-{{ version }}.tar.xz
-  url: http://ftp.acc.umu.se/pub/GNOME/sources/libsigc++/{{ major_minor }}/libsigc++-{{ version }}.tar.xz
-  sha256: e4f4866a894bdbe053e4fb22ccc6bc4b6851fd31a4746fdd20b2cf6e87c6edb6
+  url: https://download.gnome.org/sources/libsigc++/{{ major_minor }}/libsigc++-{{ version }}.tar.xz
+  sha256: 8cdcb986e3f0a7c5b4474aa3c833d676e62469509f4899110ddf118f04082651
 
 build:
   number: 0
-  skip: true  # [win]
   run_exports:
     - sigcpp-{{ abi_version }} >={{ version }}
 
 outputs:
   - name: sigcpp-{{ abi_version }}
-    script: build_libsigcpp.sh
+    script: build_libsigcpp.sh  # [unix]
+    script: build_libsigcpp.bat  # [win]
     build:
       run_exports:
         - sigcpp-{{ abi_version }} >={{ version }}
     requirements:
       build:
-        - gnuconfig
-        - autoconf
-        - automake
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
-        - make
-      host:
-        - m4
+        - meson
+        - ninja
       run_constrained:
         - libsigcpp {{ version }}
     test:
+      requires:
+        - pkg-config
       commands:
-        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}
+        - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}  # [unix]
+        - if not exist %LIBRARY_BIN%\\sigc-{{ abi_version }}-0.dll exit 1  # [win]
+        - pkg-config --exact-version {{ version }} sigc++-{{ abi_version }}
 
   - name: libsigcpp
     requirements:
       run:
         - sigcpp-{{ abi_version }}  {{ version }}
     test:
+      requires:
+        - pkg-config
       commands:
-        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc
+        - pkg-config --exact-version {{ version }} sigc++-{{ abi_version }}
 
 about:
   home: http://libsigc.sourceforge.net/
@@ -57,3 +59,4 @@ extra:
   recipe-maintainers:
     - scopatz
     - isuruf
+    - tschoonj
