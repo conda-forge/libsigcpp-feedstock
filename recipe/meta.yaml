@@ -32,18 +32,22 @@ outputs:
       run_constrained:
         - libsigcpp {{ version }}
     test:
+      requires:
+        - pkg-config
       commands:
         - test -f ${PREFIX}/lib/libsigc-{{ abi_version }}${SHLIB_EXT}  # [unix]
         - if not exist %LIBRARY_BIN%\\sigc-{{ abi_version }}-0.dll exit 1  # [win]
+        - pkg-config --exact-version {{ version }} sigc++-{{ abi_version }}
 
   - name: libsigcpp
     requirements:
       run:
         - sigcpp-{{ abi_version }}  {{ version }}
     test:
+      requires:
+        - pkg-config
       commands:
-        - test -f ${PREFIX}/lib/pkg-config/sigc++-{{ abi_version }}.pc  # [unix]
-        - if not exist %LIBRARY_LIB%\\pkgconfig\\sigc++-{{ abi_version }}.pc exit 1  # [win]
+        - pkg-config --exact-version {{ version }} sigc++-{{ abi_version }}
 
 about:
   home: http://libsigc.sourceforge.net/
