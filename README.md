@@ -1,11 +1,11 @@
-About libsigcpp
-===============
+About libsigcpp-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsigcpp-feedstock/blob/main/LICENSE.txt)
 
 Home: http://libsigc.sourceforge.net/
 
 Package license: LGPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libsigcpp-feedstock/blob/main/LICENSE.txt)
 
 Summary: libsigc++ implements a typesafe callback system for standard C++.
 
